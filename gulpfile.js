@@ -1,33 +1,33 @@
-var gulp        = require("gulp"),
-    sass        = require("gulp-sass"),
-    concat      = require("gulp-concat"),
-    watch       = require("gulp-watch"),
-    plumber     = require("gulp-plumber"),
-    minify_css  = require("gulp-minify-css"),
-    uglify      = require("gulp-uglify"),
-    sourcemaps  = require("gulp-sourcemaps"),
-    prefix      = require("gulp-autoprefixer"),
-    imagemin    = require("gulp-imagemin"),
-    pngquant    = require("imagemin-pngquant");
+var gulp        = require('gulp'),
+    sass        = require('gulp-sass'),
+    concat      = require('gulp-concat'),
+    watch       = require('gulp-watch'),
+    plumber     = require('gulp-plumber'),
+    minify_css  = require('gulp-minify-css'),
+    uglify      = require('gulp-uglify'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    prefix      = require('gulp-autoprefixer'),
+    imagemin    = require('gulp-imagemin'),
+    pngquant    = require('imagemin-pngquant');
 
 // --------------------------------------------------------------------
 
-var dest_js  = "dist/js";
-var dest_css = "dist/css";
-var src_sass = "src/sass/**/*.scss";
-var src_js   = "src/js/**/*.js";
+var dest_js  = 'dist/js';
+var dest_css = 'dist/css';
+var src_sass = 'src/sass/**/*.scss';
+var src_js   = 'src/js/**/*.js';
 
 // --------------------------------------------------------------------
 
-//var onError = function(err) {
-//    console.log(err;
-//    this.emit('end');
-//};
+var onError = function(err) {
+    console.log(err);
+    this.emit('end');
+};
 
 // SASS to CSS
 gulp.task('sass', function() {
     
-    gulp.src(src_sass)
+    return gulp.src(src_sass)
         .pipe(plumber())
         .pipe(sass())
         .pipe(prefix('last 2 versions'))
@@ -46,7 +46,7 @@ gulp.task('sass', function() {
 
 gulp.task('js', function() {
     
-    gulp.src(src_js)
+   return gulp.src(src_js)
         .pipe(plumber())
         .pipe(uglify())
         .pipe(concat('app.min.js'))
