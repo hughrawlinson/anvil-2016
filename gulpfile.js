@@ -14,7 +14,7 @@ var gulp        = require('gulp'),
     imagemin    = require('gulp-imagemin'),
     jshint      = require('gulp-jshint'),
     pngquant    = require('imagemin-pngquant'),
-    browseSync  = require('browser-sync').create();
+    browseSync  = require('browser-sync');
 
 // --------------------------------------------------------------------
 // Settings
@@ -54,13 +54,15 @@ gulp.task('sass', function() {
         .pipe(plumber({
             errorHandler: onError
         }))
-        .pipe(sass())
+        .pipe(sass({
+            includePaths: require('node-normalize-scss').includePaths
+        }))
         .pipe(prefix('last 2 versions'))
         .pipe(concat(output.min_css))
         .pipe(gulp.dest(output.css))
         .pipe(minify_css())
-        .pipe(sourcemaps.init())
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.init())
+        //.pipe(sourcemaps.write())
         .pipe(gulp.dest(output.css))
         .pipe(browseSync.reload({stream: true}));
     
@@ -71,35 +73,35 @@ gulp.task('sass', function() {
 // Compile JS
 // --------------------------------------------------------------------
 
-gulp.task('js', function() {
-    
-   return gulp.src(src.js)
-        .pipe(plumber({
-            errorHandler: onError
-        }))
-        .pipe(uglify())
-        .pipe(concat(output.min_js))
-        .pipe(sourcemaps.init())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(output.js))
-   
-})
+//gulp.task('js', function() {
+//    
+//   return gulp.src(src.js)
+//        .pipe(plumber({
+//            errorHandler: onError
+//        }))
+//        .pipe(uglify())
+//        .pipe(concat(output.min_js))
+//        .pipe(sourcemaps.init())
+//        .pipe(sourcemaps.write())
+//        .pipe(gulp.dest(output.js))
+//   
+//})
 
 // --------------------------------------------------------------------
 // Images
 // --------------------------------------------------------------------
 
-gulp.task('img', function() {
-
-    return gulp.src(src.img)
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        }))
-        .pipe(gulp.dest(output.img))
-
-})
+//gulp.task('img', function() {
+//
+//    return gulp.src(src.img)
+//        .pipe(imagemin({
+//            progressive: true,
+//            svgoPlugins: [{removeViewBox: false}],
+//            use: [pngquant()]
+//        }))
+//        .pipe(gulp.dest(output.img))
+//
+//})
 
 // --------------------------------------------------------------------
 // Watch
@@ -121,4 +123,4 @@ gulp.task('watch', function() {
 // Default
 // --------------------------------------------------------------------
 
-gulp.task('default', ['watch', 'sass', 'img' , 'js']);  
+gulp.task('default', ['watch', 'sass']);  

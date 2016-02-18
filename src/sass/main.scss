@@ -1,0 +1,20 @@
+@import "vendor/bourbon/assets/stylesheets/_bourbon.scss";
+@import "vendor/neat/assets/stylesheets/_neat.scss";
+@import "normalize";
+
+body{
+    max-width: 980px;
+    margin: 0 auto;
+    font-family: "roboto";
+    text-align: center;
+}
+
+header {
+    h1 {
+        font-size: 5em;
+        line-height: 1em;
+    }
+    p {
+        
+    }
+}
