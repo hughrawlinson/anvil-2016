@@ -41,9 +41,9 @@ h3 { font-size: 2.7em; }
 
 h4 { font-size: 2.4em; } 
 
-h5 { font-size: 2em; } 
+h5 { font-size: 2em; font-weight: 100; } 
 
-h6 { font-size: 1.6em }
+h6 { font-size: 1.8em }
 
 p { font-size: 1.2em }
 
@@ -53,53 +53,54 @@ a:visited, a:active, a {
 }
 
 header, section {
-    margin: 0px 20%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .logo {
     position: fixed;
     left: 30px;
     top: 20px;
-    width: 120px;
+    width: 140px;
     margin: 0;
 }
 
 .coverImage { 
     background:  linear-gradient(
-      rgba(0, 0, 0, 0.3), 
-      rgba(0, 0, 0, 1)
+      rgba(0,0,0,0),
+      rgba(0,0,0,1)
     ), url(../img/backgrounds/goldsmiths.jpg);
-    background-position: top center;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 200px 0;  
+    padding: 100px 0;  
 }
-
 
 header {
     .title {
         font-size: 7em; 
-        right: 0;
         font-weight: 700;
         color: $goldy;
         line-height: 1em;
-        margin: 0;
+        margin: 25px 0;
     }
     .subtitle{
-        font-size: 1.7em;
+        margin: 30px 0;
     }
-    p {
-        font-size: 1.3em;
-        margin: 60px 0 ;
+    .goldLogo{
     }
-}
-
-.sectionTitle {
-    font-size: 3em;
+    .date {
+        font-size: 2.3em;
+        margin: 25px 0;
+    }
+    .speech {
+        font-size: 1.6em;
+        margin: 50px 0 70px 0 ;
+    }
 }
 
 .button {
-    font-weight: bold;
+    font-size: 1.2em;
     letter-spacing: 2px;
     border-radius: 3px;
     padding: 15px 25px;
@@ -112,3 +113,24 @@ header {
     border: 1px solid $goldy;
     color: #000;
 }
+
+.sectionTitle {
+    font-size: 3em;
+}
+
+form {
+    width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 10px 0 ;
+    background: rgba(255,255,255,0);
+    border: 1px solid #fff;
+    border-radius: 2px;
+}
+
+
+
