@@ -73,35 +73,35 @@ gulp.task('sass', function() {
 // Compile JS
 // --------------------------------------------------------------------
 
-//gulp.task('js', function() {
-//    
-//   return gulp.src(src.js)
-//        .pipe(plumber({
-//            errorHandler: onError
-//        }))
-//        .pipe(uglify())
-//        .pipe(concat(output.min_js))
+gulp.task('js', function() {
+    
+   return gulp.src(src.js)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(uglify())
+        .pipe(concat(output.min_js))
 //        .pipe(sourcemaps.init())
 //        .pipe(sourcemaps.write())
-//        .pipe(gulp.dest(output.js))
-//   
-//})
+        .pipe(gulp.dest(output.js))
+   
+})
 
 // --------------------------------------------------------------------
 // Images
 // --------------------------------------------------------------------
 
-//gulp.task('img', function() {
-//
-//    return gulp.src(src.img)
-//        .pipe(imagemin({
-//            progressive: true,
-//            svgoPlugins: [{removeViewBox: false}],
-//            use: [pngquant()]
-//        }))
-//        .pipe(gulp.dest(output.img))
-//
-//})
+gulp.task('img', function() {
+
+    return gulp.src(src.img)
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(output.img))
+
+})
 
 // --------------------------------------------------------------------
 // Watch
@@ -114,7 +114,7 @@ gulp.task('watch', function() {
     });
     gulp.watch(src.js, ['js']);
     gulp.watch(src.sass, ['sass']);
-    gulp.watch(src.img, ['img ']);
+    gulp.watch(src.img, ['img']);
     gulp.watch(output.html).on('change', browseSync.reload)
     
 })
@@ -123,4 +123,4 @@ gulp.task('watch', function() {
 // Default
 // --------------------------------------------------------------------
 
-gulp.task('default', ['watch', 'sass']);  
+gulp.task('default', ['watch', 'sass', 'js', 'img']);  
