@@ -9,23 +9,27 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="title">Anvil hack 2016</h1>
-        <h3 class="subtitle">A creative hackathon hosted by <a href="http://www.gold.ac.uk/">Goldsmiths University</a></h3>
-        <h4 class="date">12 - 13 March 2016</h4>
-        <div class="logo">
-            <img src="img/hacksmiths-3.svg" alt="Anvil Hack 2016 logo">
-        </div>
-        <div class="speech">
-            <p>We are both proud and super excited to bring to you Anvil Hack 2016. With all of the great food, excellent sponsors and an venue we hope to inspire the creative hacker in you!</p>
-        </div>
-        <div class="newsletter">
-            <a href="" class="button">Newsletter</a>
-        </div>
-    </header>
+    <div class="logo"><img src="img/logo/AnvilLogo.svg" alt="Anvil Hack 2016 Logo"></div>
+    <div class="coverImage">
+        <header>
+            <h1 class="title">Anvil Hack 2016</h1>
+            <h3 class="subtitle">A creative hackathon hosted by</h3>
+            <img src="img/partnerships/Goldsmith_University-logo.svg" alt="Goldsmith University Logo" width="600px">
+            <h4 class="date">12 - 13 March 2016</h4>
+
+            <div class="speech">
+                <p>We are both proud and super excited to bring to you Anvil Hack 2016. With all of the great food, excellent sponsors and an venue we hope to inspire the creative hacker in you!</p>
+            </div>
+            <div class="newsletter">
+                <a href="" class="button">Newsletter</a>
+            </div>
+        </header>
+    </div>
     <section class="sponsors">
         <h2 class="sectionTitle">Our Sponsors</h2>
-
+        <h3>Platinum</h3>
+        <img src="img/sponsors/braintree.png" alt="Braintree logo" width="600px">
+        <img src="img/sponsors/spotify.png" alt="Spotify Logo" width="400px">
     </section>
     <section class="schedule">
         <h2 class="sectionTitle">Schedule</h2>
@@ -37,7 +41,17 @@
     <footer>
         <section class="contactForm">
             <h2 class="sectionTitle">Contact</h2>
-            <p>Formspree.io to go here</p>
+            <p>Drop us a line!</p>
+            <form action="//formspree.io/yo@hacksmiths.club" method="POST">
+                <input type="text" id="name" name="name" placeholder="Stick your name here">
+                <input type="email" id="email" name="_replyto" placeholder="Email here">
+                <textarea id="body" name="message" placeholder="And message here"></textarea>
+                <input type="hidden" name="_next" value="#">
+                <input type="text" name="_gotcha" style="display:none">
+                <input type="hidden" name="_subject" value="From My Site!">
+                <button type="submit" id="submit">Send</button>
+            </form>
+        </section>
         </section>
         <section class="contactInfo">
             <div class="address half">

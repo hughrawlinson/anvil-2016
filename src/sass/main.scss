@@ -1,13 +1,13 @@
 @import "vendor/bourbon/assets/stylesheets/_bourbon.scss";
-@import "vendor/neat/assets/stylesheets/_neat.scss";
+//@import "vendor/neat/assets/stylesheets/_neat.scss";
 
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,300,700,500);
-@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans:700,400italic,400);
+//@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,300,700,500);
+//@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans:700,400italic,400);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
 @import "normalize";
 
-$techFont:'Quattrocento Sans', sans-serif;
+//$techFont:'Quattrocento Sans', sans-serif;
 $openFont: 'Open Sans', sans-serif;
 $shareTechFont: 'Share Tech Mono';
 
@@ -15,14 +15,16 @@ $goldy: #bd8f2d;
 $creamyCream: #F0F0F0;
 $nightTime: #000;
 
+html{
+    background: $nightTime;
+    color: $creamyCream;
+}
+
 body {
-    max-width: 1000px;
     text-align: center;
     font-family: $shareTechFont;
     font-weight: 400;
     font-size: 16px;
-    background: $nightTime;
-    color: $creamyCream;
     margin: 0 auto;
     letter-spacing: 0.1px;
 }
@@ -43,21 +45,48 @@ h5 { font-size: 2em; }
 
 h6 { font-size: 1.6em }
 
-p { font-size:  1.2em}
+p { font-size: 1.2em }
 
 a:visited, a:active, a {
     color: #F0F0F0;
     text-decoration: none;
 }
 
+header, section {
+    margin: 0px 20%;
+}
+
+.logo {
+    position: fixed;
+    left: 30px;
+    top: 20px;
+    width: 120px;
+    margin: 0;
+}
+
+.coverImage { 
+    background:  linear-gradient(
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 1)
+    ), url(../img/backgrounds/goldsmiths.jpg);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 200px 0;  
+}
+
+
 header {
-    margin: 250px 0;
-    h1 {
-        font-size: 5em;
+    .title {
+        font-size: 7em; 
+        right: 0;
         font-weight: 700;
         color: $goldy;
         line-height: 1em;
         margin: 0;
+    }
+    .subtitle{
+        font-size: 1.7em;
     }
     p {
         font-size: 1.3em;

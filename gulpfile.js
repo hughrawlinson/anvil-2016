@@ -23,7 +23,7 @@ var gulp        = require('gulp'),
 var src = {
     sass: "src/sass/**/*.scss",
     js: "src/js/**/*.js",
-    img: "src/img/*"
+    img: "src/img/**/*"
 };
 
 var output = {
