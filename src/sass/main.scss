@@ -1,15 +1,13 @@
 @import "vendor/bourbon/assets/stylesheets/_bourbon.scss";
-//@import "vendor/neat/assets/stylesheets/_neat.scss";
+@import "vendor/neat/assets/stylesheets/_neat.scss";
 
-//@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,300,700,500);
-//@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans:700,400italic,400);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
 @import "normalize";
 
 //$techFont:'Quattrocento Sans', sans-serif;
 $openFont: 'Open Sans', sans-serif;
-$shareTechFont: 'Share Tech Mono';
+$shareTechFont: 'Share Tech Mono', ;
 
 $goldy: #bd8f2d; 
 $creamyCream: #F0F0F0;
@@ -52,9 +50,21 @@ a:visited, a:active, a {
     text-decoration: none;
 }
 
+hr {
+    border:1px dashed rgba(255,255,255,0.2);
+    width: 500px ;
+    margin-top: 70px;
+}
+
+.bottomLine {
+    border:1px solid rgba(255,255,255,0.2);
+    width: 500px;
+    margin-bottom: 40px;
+}
+
 header, section {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 23%;
+    margin-right: 23%;
 }
 
 .logo {
@@ -99,7 +109,7 @@ header {
     }
 }
 
-.button {
+.button, #submit {
     font-size: 1.2em;
     letter-spacing: 2px;
     border-radius: 3px;
@@ -131,6 +141,47 @@ input, textarea {
     border: 1px solid #fff;
     border-radius: 2px;
 }
+
+textarea {
+    height: 200px;
+}
+
+#submit {
+    float: left;
+}
+
+#submit:hover {
+    background: $goldy;
+    border: 1px solid $goldy;
+    color: #000;
+}
+
+form {
+    @include clearfix;
+}
+
+.contactInfo {
+    h5 {
+       margin-bottom: 0; 
+    }
+    .contactWrap, .emailSocial{
+        @include outer-container;
+        .address, .travInfo {
+            @include span-columns(6);
+        }
+        .email, .social {
+            @include span-columns(6);
+        }
+    }
+    .social {
+        
+    }
+    
+    
+  
+}
+
+
 
 
 
